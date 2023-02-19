@@ -1,0 +1,2 @@
+gcloud dataproc clusters create 
+${DATAPROC_CLUSTER_NAME} --region ${REGION} --single-node --master-machine-type n1-standard-2 --master-boot-disk-size 500 --image-version 2.0-debian10 --project learngcp-ace-guide-342819 --initialization-actions gs://goog-dataproc-initialization-actions-${REGION}/connectors/connectors.sh --metadata bigquery-connector-version=1.2.0 --metadata spark-bigquery-connector-version=0.21.0
