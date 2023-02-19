@@ -17,7 +17,7 @@ def submit_job(project_id, region, cluster_name):
         "placement": {"cluster_name": cluster_name},
         "spark_job": {
             "main_class": "org.apache.spark.examples.SparkPi",
-            "jar_file_uris": ["file:///usr/lib/spark/examples/jars/spark-examples.jar"],
+            "jar_file_uris": ["gs://spark-lib/bigquery/spark-bigquery-latest.jar"], 
             "args": ["1000"],
         },
     }
@@ -39,3 +39,12 @@ def submit_job(project_id, region, cluster_name):
     )
 
     print(f"Job finished successfully: {output}")
+    
+  if __name__ == "__main__":
+    if len(sys.argv) < 3:
+        sys.exit("python sales.py project_id region cluster_name")
+
+    project_id = ${GCP_PROJECT_ID}
+    region = ${REGION}
+    cluster_name = ${DATAPROC_CLUSTER_NAME}
+    submit_job(project_id, region, cluster_name)
