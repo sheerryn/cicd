@@ -22,6 +22,6 @@ export GCP_PROJECT_ID=$(gcloud config list --format 'value(core.project)')
 export PROJECT_NUMBER=$(gcloud projects describe "${GCP_PROJECT_ID}" --format='get(projectNumber)')
 export PROD='prod'
 export DATAPROC_CLUSTER_NAME ='data-cluster'
-export REGION = 'us-central'
+export REGION = 'us-central1'
 export SOURCE_CODE_REPO='data-source'
 export COMPOSER_ENV_NAME='data-composer'
